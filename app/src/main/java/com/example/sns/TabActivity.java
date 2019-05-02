@@ -1,13 +1,12 @@
 package com.example.sns;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 public class TabActivity extends AppCompatActivity {
 
-    TabLayout tabLayout;
+   //TabLayout tabLayout;
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
 
@@ -15,12 +14,12 @@ public class TabActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab);
+    //    setContentView(R.layout.activity_tab);
 
-        initTab();
-        initViewPager();
+    //    initTab();
+    //    initViewPager();
     }
-
+/*
     private void initViewPager(){
 
         viewPager = findViewById(R.id.view_pager);
@@ -67,4 +66,5 @@ public class TabActivity extends AppCompatActivity {
             }
         });
     }
+    */
 }
