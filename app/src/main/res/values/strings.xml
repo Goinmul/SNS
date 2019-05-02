@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SNS</string>
+    <string name="title_activity_grades_four_buttons">Grades_four_buttons</string>
+    <string name="title_activity_tab__recycler_view">Tab_RecyclerView</string>
 </resources>
