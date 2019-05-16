@@ -34,7 +34,6 @@ public class Tab_RecyclerView extends AppCompatActivity {
         for (int i = 0; i < 20; i++) {
             mSubject.add("data structure link " + i);
         }
-
         // creates recycler view and connects it with an adapter + data.
         // 1) instantiate recyclerView
         mRecyclerView = findViewById(R.id.recyclerview); // from content_tab_recycler_view.xml
@@ -47,8 +46,6 @@ public class Tab_RecyclerView extends AppCompatActivity {
 
         // 4) now RecyclerView is a default layout for this activity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
 
         // floating button
         FloatingActionButton fab = findViewById(R.id.fab);
