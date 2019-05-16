@@ -1,9 +1,15 @@
 package com.example.sns;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+
+import com.example.sns.DB.GetData;
+import com.example.sns.Model.Comment;
+import com.example.sns.Model.Post;
+import com.example.sns.Model.Subject;
+import com.example.sns.Model.User;
 
 /*
 Main page with four grade(freshman, sophomore, ...) buttons
@@ -18,10 +24,23 @@ public class TabActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_tab);
+        setContentView(R.layout.activity_tab);
 
-            initTab();
-            initViewPager();
+        GetData data = new GetData();
+
+        User user = new User();
+        Subject subject = new Subject();
+        Post post = new Post();
+        Comment comment = new Comment();
+
+        data.result(user);
+        data.result(subject);
+        data.result(post);
+        data.result(comment);
+
+
+        initTab();
+        initViewPager();
     }
 
     private void initViewPager(){

@@ -1,4 +1,4 @@
-package com.example.sns;
+package com.example.sns.DB;
 
 import android.util.Log;
 
