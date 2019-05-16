@@ -38,62 +38,9 @@ public class TabActivity extends AppCompatActivity {
         data.result(post);
         data.result(comment);
 
-/*
-        StringBuffer sb = new StringBuffer();
 
-        String test = "http://samuel1226.dothome.co.kr/project/user.php";
-
-        Log.e("test", test);
-
-        URLConnector task = new URLConnector(test);
-
-        Log.e("success", "make");
-
-        task.start();
-
-        try{
-            task.join();
-            Log.e("try", "try");
-        }
-        catch(InterruptedException e){
-            Log.e("error1", ""+e);
-        }
-
-        String result = task.getResult();
-
-        Log.e("result", result);
-
-        try {
-            Log.e("not done", "jarr");
-            JSONArray jarray = new JSONArray(result);   // JSONArray 생성
-            Log.e("done", "jarr");
-            for(int i=0; i < jarray.length(); i++){
-                JSONObject jObject = jarray.getJSONObject(i);  // JSONObject 추출
-                int index = jObject.getInt("index");
-                String user_name = jObject.getString("user_name");
-                String user_id = jObject.getString("user_id");
-                String user_pw = jObject.getString("user_pw");
-                int user_num = jObject.getInt("user_num");
-
-                sb.append(
-                        "인덱스:" + index +
-                                "이름:" + user_name +
-                                "아이디:" + user_id +
-                                "비밀번호:" + user_pw +
-                                "학번:" + user_num +"\n"
-                );
-            }
-            Log.e("test", sb.toString());
-
-        } catch (JSONException e) {
-            Log.e("error2", ""+e);
-
-            e.printStackTrace();
-        }
-*/
-
-            initTab();
-            initViewPager();
+        initTab();
+        initViewPager();
     }
 
     private void initViewPager(){
