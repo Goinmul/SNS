@@ -103,7 +103,7 @@ public class SetData {
         Log.d("Set test", "point " + temp_point);
         Log.d("Set test", "point count " + temp_count);
 
-        URLConnector task = new URLConnector(phpType[5] + "?point=" + temp_point + "&point_sum=" + temp_sum + "&point_count=" + temp_count + "&index" + index);
+        URLConnector task = new URLConnector(phpType[5] + "?point=" + temp_point + "&point_sum=" + temp_sum + "&point_count=" + temp_count + "&index=" + index);
 
         task.start();
 
