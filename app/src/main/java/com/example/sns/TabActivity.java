@@ -4,12 +4,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.example.sns.DB.GetData;
 import com.example.sns.Model.Comment;
 import com.example.sns.Model.Post;
 import com.example.sns.Model.Subject;
 import com.example.sns.Model.User;
+
+import java.util.ArrayList;
 
 /*
 Main page with four grade(freshman, sophomore, ...) buttons
@@ -28,16 +31,81 @@ public class TabActivity extends AppCompatActivity {
 
         GetData data = new GetData();
 
-        User user = new User();
-        Subject subject = new Subject();
-        Post post = new Post();
-        Comment comment = new Comment();
+        ArrayList<User> user = new ArrayList<User>();
+        ArrayList<Subject> subject = new ArrayList<Subject>();
+        ArrayList<Post> post = new ArrayList<Post>();
+        ArrayList<Comment> comment = new ArrayList<Comment>();
 
-        data.result(user);
-        data.result(subject);
-        data.result(post);
-        data.result(comment);
+        data.resultUser(user);
+        data.resultSubject(subject);
+        data.resultPost(post);
+        data.resultComment(comment);
 
+        StringBuffer usersb = new StringBuffer(); //StringBuffer - log.d까지 다 데이터를 가져왔는지 테스트
+        StringBuffer subsb = new StringBuffer();
+        StringBuffer postsb = new StringBuffer();
+        StringBuffer commentsb = new StringBuffer();
+
+        for (int i = 0; i < user.size(); i++) {
+            Log.d("user for test", "" + user.get(i).getIndex());
+            usersb.append( //test를 위한 용도
+                    "\n" +
+                            "인덱스:" + user.get(i).getIndex() +
+                            "이름:" + user.get(i).getUser_name() +
+                            "아이디:" + user.get(i).getUser_id() +
+                            "비밀번호:" + user.get(i).getUser_pw() +
+                            "학번:" + user.get(i).getUser_num() + "\n"
+            );
+        }
+
+        Log.d("testuser", usersb.toString()); //test를 위한 용도
+
+        for (int i = 0; i < subject.size(); i++) {
+            subsb.append( //test를 위한 용도
+                    "\n" +
+                            "인덱스:" + subject.get(i).getIndex() +
+                            "학번:" + subject.get(i).getGrade() +
+                            "이름:" + subject.get(i).getSubject_name() + "\n"
+            );
+        }
+
+        Log.d("testsub", subsb.toString()); //test를 위한 용도
+
+        for (int i = 0; i < post.size(); i++) {
+            postsb.append( //test를 위한 용도
+                    "\n" +
+                            "인덱스:" + post.get(i).getIndex() +
+                            "과목:" + post.get(i).getSubject_name() +
+                            "아이디:" + post.get(i).getUser_id() +
+                            "제목:" + post.get(i).getTitle() +
+                            "내용:" + post.get(i).getContent() +
+                            "날짜:" + post.get(i).getEdit_date() +
+                            "like:" + post.get(i).getLike_count() +
+                            "점수:" + post.get(i).getPoint() +
+                            "점수합:" + post.get(i).getPoint_sum() +
+                            "점수갯수:" + post.get(i).getPoint_count() +
+                            "조회수:" + post.get(i).getView_count() + "\n"
+            );
+
+        }
+
+        Log.d("testpost", postsb.toString()); //test를 위한 용도
+
+        for (int i = 0; i < comment.size(); i++) {
+            Log.d("COmment size", ""+comment.size());
+            commentsb.append( //test를 위한 용도
+                    "\n" +
+                            "인덱스:" + comment.get(i).getIndex() +
+                    "과목인덱스:" + comment.get(i).getPost_index() +
+                    "아이디:" + comment.get(i).getUser_id() +
+                    "내용:" + comment.get(i).getContent() +
+                    "날짜:" + comment.get(i).getEdit_date() +
+                    "like:" + comment.get(i).getLike_count() + "\n"
+        );
+
+        }
+
+        Log.d("testcomment", commentsb.toString()); //test를 위한 용도
 
         initTab();
         initViewPager();
