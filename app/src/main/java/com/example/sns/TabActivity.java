@@ -120,7 +120,7 @@ public class TabActivity extends AppCompatActivity {
 //      setdata.editPost("Data Structure", "Fortest2", "test2", 3); // subject_name, title, content, index
 //      setdata.deletePost(3); // index
 //      setdata.likePost(3); // index
-//      setdata.pointPost(2, 8, 5, 2); //수정 필요 // 입력할 point, point_sum, point_count, index
+//      setdata.pointPost(2, 8, 5, 2); // 입력할 point, point_sum, point_count, index
 //      setdata.viewPost(3); // index
 //      setdata.writeComment(3, "haha", "test1"); // post_index, user_id, content
 //      setdata.editComment("test2", 3); // content, index
