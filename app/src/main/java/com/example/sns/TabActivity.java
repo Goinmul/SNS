@@ -7,11 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.sns.DB.GetData;
+import com.example.sns.DB.SetData;
 import com.example.sns.Model.Comment;
 import com.example.sns.Model.Post;
 import com.example.sns.Model.Subject;
 import com.example.sns.Model.User;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 /*
@@ -29,18 +34,20 @@ public class TabActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab);
 
-        GetData data = new GetData();
+        GetData getdata = new GetData();
+        SetData setdata = new SetData();
 
         ArrayList<User> user = new ArrayList<User>();
         ArrayList<Subject> subject = new ArrayList<Subject>();
         ArrayList<Post> post = new ArrayList<Post>();
         ArrayList<Comment> comment = new ArrayList<Comment>();
 
-        data.resultUser(user);
-        data.resultSubject(subject);
-        data.resultPost(post);
-        data.resultComment(comment);
+        getdata.resultUser(user);
+        getdata.resultSubject(subject);
+        getdata.resultPost(post);
+        getdata.resultComment(comment);
 
+        /*
         StringBuffer usersb = new StringBuffer(); //StringBuffer - log.d까지 다 데이터를 가져왔는지 테스트
         StringBuffer subsb = new StringBuffer();
         StringBuffer postsb = new StringBuffer();
@@ -106,6 +113,19 @@ public class TabActivity extends AppCompatActivity {
         }
 
         Log.d("testcomment", commentsb.toString()); //test를 위한 용도
+        */
+
+//      setdata.signUp("haha", "5555", "hh", 12341234);  // user_id, user_pw, user_name, user_num
+//      setdata.writePost("CapStone", "haha", "Fortest", "testtest"); // subject_name, user_id, title. content
+//      setdata.editPost("Data Structure", "Fortest2", "test2", 3); // subject_name, title, content, index
+//      setdata.deletePost(3); // index
+//      setdata.likePost(3); // index
+//      setdata.pointPost(2, 8, 5, 2); //수정 필요 // 입력할 point, point_sum, point_count, index
+//      setdata.viewPost(3); // index
+//      setdata.writeComment(3, "haha", "test1"); // post_index, user_id, content
+//      setdata.editComment("test2", 3); // content, index
+//      setdata.deleteComment(3); // index
+//      setdata.likeComment(3); // index
 
         initTab();
         initViewPager();
