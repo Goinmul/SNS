@@ -1,4 +1,4 @@
-package com.example.jkpc.myapplication;
+package com.example.sns;
 
 public class Dictionary {
 

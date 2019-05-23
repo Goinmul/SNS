@@ -1,4 +1,4 @@
-package com.example.jkpc.myapplication;
+package com.example.sns;
 
 /**
  * Created by JKPC on 2019-05-14.

@@ -1,4 +1,4 @@
-package com.example.jkpc.myapplication;
+package com.example.sns;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;

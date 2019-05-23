@@ -1,4 +1,4 @@
-package com.example.jkpc.myapplication;
+package com.example.sns;
 
 import android.content.Intent;
 import android.os.Bundle;
