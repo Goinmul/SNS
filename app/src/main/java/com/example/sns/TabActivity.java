@@ -1,4 +1,5 @@
 package com.example.sns;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
@@ -33,6 +34,9 @@ public class TabActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab);
+
+        Intent intent = getIntent();
+
 
         GetData getdata = new GetData();
         SetData setdata = new SetData();

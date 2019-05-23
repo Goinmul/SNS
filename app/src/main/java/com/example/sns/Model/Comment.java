@@ -1,6 +1,7 @@
 package com.example.sns.Model;
 
 public class Comment {
+
     private int index;
     private int post_index;
     private String user_id;

@@ -31,6 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/idText" />
 
     <Button
+        android:onClick="logIn_click"
         android:id="@+id/loginButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

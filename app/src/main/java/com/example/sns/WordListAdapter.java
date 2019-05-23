@@ -50,7 +50,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
                     Toast.makeText(v.getContext(), subjects.get(getAdapterPosition()) + " is clicked!", Toast.LENGTH_SHORT).show();
 
                     // real data
-                    String class_name = "com.example.sns.Tab_RecyclerView";
+                    String class_name = "com.example.sns.Tab_RecyclerView"; // intents to move! Should have all the list.
                     try {
                         Intent intent = new Intent(v.getContext(), Class.forName(class_name));
                         v.getContext().startActivity(intent);

@@ -61,12 +61,10 @@ public class RegisterActivity extends AppCompatActivity {
                                         .create()
                                         .show();
                             }
-
                         }
                         catch (JSONException e){
                             e.printStackTrace();
                         }
-
                     }
                 };
                 RegisterRequest registerRequest = new RegisterRequest(userID, userPassword, userName, userAge, responseListener);
