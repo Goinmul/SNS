@@ -1,6 +1,5 @@
 package com.example.sns;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,14 +10,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
+import com.example.sns.DB.GetData;
+import com.example.sns.Model.Subject;
 
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TabFragment4 extends Fragment {
 
+    GetData getdata = new GetData();
+    ArrayList<Subject> subject = new ArrayList<Subject>();
     // sample data
     private ArrayList<String> mSubject = new ArrayList<>();
 
@@ -34,8 +37,11 @@ public class TabFragment4 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         // initialize sample data
-        for (int i = 0; i < 20; i++) {
-            mSubject.add("(frag4)Subject " + i);
+        getdata.resultSubject(subject);
+        for (int i = 0; i < subject.size(); i++) {
+            if (subject.get(i).getGrade().equalsIgnoreCase("4")) {
+                mSubject.add("(frag1)Subject " + subject.get(i).getSubject_name().toString());
+            }
         }
     }
 
