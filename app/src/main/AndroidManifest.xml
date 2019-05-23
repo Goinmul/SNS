@@ -10,12 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:networkSecurityConfig="@xml/network_security_config">
+
         <activity
             android:name=".Tab_RecyclerView"
             android:label="@string/title_activity_tab__recycler_view"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".TabActivity">
+
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

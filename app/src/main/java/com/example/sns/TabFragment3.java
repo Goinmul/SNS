@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sns.DB.GetData;
+import com.example.sns.Model.Subject;
+
 import java.util.ArrayList;
 
 
@@ -18,6 +21,9 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class TabFragment3 extends Fragment {
+
+    GetData getdata = new GetData();
+    ArrayList<Subject> subject = new ArrayList<Subject>();
 
     // sample data
     private ArrayList<String> mSubject = new ArrayList<>();
@@ -33,9 +39,12 @@ public class TabFragment3 extends Fragment {
 
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        // initialize sample data
-        for (int i = 0; i < 20; i++) {
-            mSubject.add("(frag3)Subject " + i);
+
+        getdata.resultSubject(subject);
+        for (int i = 0; i < subject.size(); i++) {
+            if (subject.get(i).getGrade().equalsIgnoreCase("3")) {
+                mSubject.add("(frag1)Subject " + subject.get(i).getSubject_name().toString());
+            }
         }
     }
 
