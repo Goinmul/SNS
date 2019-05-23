@@ -1,5 +1,4 @@
 package com.example.sns;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,9 +24,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 Intent registerintent = new Intent(MainActivity.this, RegisterActivity.class);
                 MainActivity.this.startActivity(registerintent);
-
             }
         });
+    }
 
+    public void logIn_click(View view) {
+
+        Intent login_intent = new Intent(this,TabActivity.class);
+        MainActivity.this.startActivity(login_intent);
     }
 }
