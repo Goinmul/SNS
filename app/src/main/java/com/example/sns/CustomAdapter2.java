@@ -23,7 +23,7 @@ import java.util.ArrayList;
  */
 
 public class CustomAdapter2 extends RecyclerView.Adapter<CustomAdapter2.CustomViewHolder> {
-    private ArrayList<CommentActivity> mList;
+    private ArrayList<Comment> mList;
     private Context mContext;
     private CustomAdapter.ItemClick itemClick;
 
@@ -80,7 +80,7 @@ public class CustomAdapter2 extends RecyclerView.Adapter<CustomAdapter2.CustomVi
                             public void onClick(View v) {
                                 String strContents = editTextContents.getText().toString();
                                 String strName = mList.get(getAdapterPosition()).getContents() ;
-                                CommentActivity com = new CommentActivity(strName, strContents);
+                                Comment com = new Comment(strName, strContents);
 
                                  mList.set(getAdapterPosition(), com);
                                 notifyItemChanged(getAdapterPosition());
@@ -106,7 +106,7 @@ public class CustomAdapter2 extends RecyclerView.Adapter<CustomAdapter2.CustomVi
     }
 
 
-    public CustomAdapter2(Context context, ArrayList<CommentActivity> list) {
+    public CustomAdapter2(Context context, ArrayList<Comment> list) {
         mContext = context ;
         mList = list;
     }

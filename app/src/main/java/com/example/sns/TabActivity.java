@@ -37,6 +37,7 @@ public class TabActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+
         GetData getdata = new GetData();
         SetData setdata = new SetData();
 
