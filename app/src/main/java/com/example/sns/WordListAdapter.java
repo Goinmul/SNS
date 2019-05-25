@@ -50,11 +50,15 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
                     Toast.makeText(v.getContext(), subjects.get(getAdapterPosition()) + " is clicked!", Toast.LENGTH_SHORT).show();
 
                     // real data
-                    String class_name = "com.example.sns.Tab_RecyclerView"; // intents to move! Should have all the list.
+                    // intents to move! Should have all the list.
+                    //String intent_class = "com.example.sns."+subjects.get(getAdapterPosition()).toString();
+                    //String class_name = intent_class;
+                    String class_name = "com.example.sns.PostListActivity";
                     try {
                         Intent intent = new Intent(v.getContext(), Class.forName(class_name));
                         v.getContext().startActivity(intent);
                     } catch (ClassNotFoundException e) {
+                        Toast.makeText(v.getContext(), "intent to "+subjects.get(getAdapterPosition()) + " class is not found.", Toast.LENGTH_LONG).show();
                         e.printStackTrace();
                     }
                     /*Intent intent = new Intent(v.getContext(),Tab_RecyclerView.class);
