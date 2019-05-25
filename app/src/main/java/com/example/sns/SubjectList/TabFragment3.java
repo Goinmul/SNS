@@ -1,4 +1,5 @@
-package com.example.sns;
+package com.example.sns.SubjectList;
+
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,16 +13,19 @@ import android.view.ViewGroup;
 
 import com.example.sns.DB.GetData;
 import com.example.sns.Model.Subject;
+import com.example.sns.R;
 
 import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabFragment4 extends Fragment {
+public class TabFragment3 extends Fragment {
 
     GetData getdata = new GetData();
     ArrayList<Subject> subject = new ArrayList<Subject>();
+
     // sample data
     private ArrayList<String> mSubject = new ArrayList<>();
 
@@ -30,16 +34,16 @@ public class TabFragment4 extends Fragment {
     private WordListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public TabFragment4() {
+    public TabFragment3() {
         // Required empty public constructor
     }
 
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        // initialize sample data
+
         getdata.resultSubject(subject);
         for (int i = 0; i < subject.size(); i++) {
-            if (subject.get(i).getGrade().equalsIgnoreCase("4")) {
+            if (subject.get(i).getGrade().equalsIgnoreCase("3")) {
                 mSubject.add(subject.get(i).getSubject_name().toString());
             }
         }

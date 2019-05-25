@@ -8,10 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.sns.CustomAdapter;
-import com.example.sns.Dictionary;
-import com.example.sns.PostActivity;
-import com.example.sns.PostViewActivity;
+import com.example.sns.Post.CustomAdapter;
+import com.example.sns.Post.Dictionary;
+import com.example.sns.Post.PostWriteActivity;
+import com.example.sns.Post.PostViewActivity;
 import com.example.sns.R;
 
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ public class Computer_Graphics extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent;
                 //Intent intent ;
-               intent = new Intent(Computer_Graphics.this, PostActivity.class) ;
+               intent = new Intent(Computer_Graphics.this, PostWriteActivity.class) ;
                 startActivity(intent) ;
 
                 // Dictionary 생성자를 사용하여 ArrayList에 삽입할 데이터를 만듭니다.

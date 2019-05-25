@@ -1,4 +1,4 @@
-package com.example.sns;
+package com.example.sns.Login;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;

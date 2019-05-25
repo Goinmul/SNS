@@ -1,4 +1,4 @@
-package com.example.sns;
+package com.example.sns.Comment;
 
 /**
  * Created by JKPC on 2019-05-14.

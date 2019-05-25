@@ -11,42 +11,14 @@
         android:theme="@style/AppTheme"
         android:networkSecurityConfig="@xml/network_security_config">
 
-        <activity android:name=".subjects.Algorithm_Analysis"
-            ></activity>
-        <activity android:name=".subjects.C_Programming"
-            ></activity>
-        <activity android:name=".subjects.CapStone"
-            ></activity>
-        <activity android:name=".subjects.Compiler_Theory"
-            ></activity>
-        <activity android:name=".subjects.Computer_Graphics"
-            ></activity>
-        <activity android:name=".subjects.Computer_Security"
-            ></activity>
-        <activity android:name=".subjects.Computer_Vision"
-            ></activity>
-        <activity android:name=".subjects.Data_Structure"
-            ></activity>
-        <activity android:name=".subjects.Database_Systems"
-            ></activity>
-        <activity android:name=".subjects.Embedded_Processor_Application"
-            ></activity>
-        <activity android:name=".subjects.Operating_System"
-            ></activity>
+        <activity android:name=".Login.RegisterActivity"/>
+        <activity android:name=".SubjectList.TabActivity"/>
+        <activity android:name=".Tab_RecyclerView"/>
+        <activity android:name=".Post.PostListActivity"/>
+        <activity android:name=".Post.PostWriteActivity"/>
+        <activity android:name=".Post.PostViewActivity"/>
 
-
-        <activity android:name=".PostListActivity"
-            ></activity>
-
-        <activity
-            android:name=".Tab_RecyclerView"
-            android:label="@string/title_activity_tab__recycler_view"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".TabActivity">
-
-        </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
