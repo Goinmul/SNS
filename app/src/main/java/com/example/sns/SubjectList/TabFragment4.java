@@ -1,4 +1,4 @@
-package com.example.sns;
+package com.example.sns.SubjectList;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.sns.DB.GetData;
 import com.example.sns.Model.Subject;
+import com.example.sns.R;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,7 @@ public class TabFragment4 extends Fragment {
         getdata.resultSubject(subject);
         for (int i = 0; i < subject.size(); i++) {
             if (subject.get(i).getGrade().equalsIgnoreCase("4")) {
-                mSubject.add("(frag1)Subject " + subject.get(i).getSubject_name().toString());
+                mSubject.add(subject.get(i).getSubject_name().toString());
             }
         }
     }

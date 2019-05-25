@@ -1,4 +1,4 @@
-package com.example.sns;
+package com.example.sns.SubjectList;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

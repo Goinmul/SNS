@@ -1,10 +1,10 @@
-package com.example.sns;
+package com.example.sns.Comment;
 
 /**
  * Created by JKPC on 2019-05-14.
  */
 
-public class Comment {
+public class CommentActivity {
     private String name ;
     private String contents ;
     private String like = "like" ;
@@ -25,7 +25,7 @@ public class Comment {
         this.contents = contents;
     }
 
-    public Comment(String name, String contents) {
+    public CommentActivity(String name, String contents) {
         this.name = name;
         this.contents = contents;
         this.like = "like" ;

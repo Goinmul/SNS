@@ -1,4 +1,4 @@
-package com.example.sns;
+package com.example.sns.SubjectList;
 
 /// Class of recyclerView's adapter
 
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.sns.R;
+
 import java.util.ArrayList;
 
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
@@ -50,7 +53,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
                     Toast.makeText(v.getContext(), subjects.get(getAdapterPosition()) + " is clicked!", Toast.LENGTH_SHORT).show();
 
                     // real data
-                    String class_name = "com.example.sns.Tab_RecyclerView"; // intents to move! Should have all the list.
+                    String class_name = "com.example.sns.Post.PostListActivity"; // intents to move! Should have all the list.
                     try {
                         Intent intent = new Intent(v.getContext(), Class.forName(class_name));
                         v.getContext().startActivity(intent);
