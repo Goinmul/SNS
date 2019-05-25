@@ -1,4 +1,4 @@
-package com.example.sns.SubjectList;
+package com.example.sns.subjects;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import com.example.sns.CustomAdapter;
 import com.example.sns.Dictionary;
 import com.example.sns.PostActivity;
 import com.example.sns.PostViewActivity;
+import com.example.sns.R;
 
 import java.util.ArrayList;
 

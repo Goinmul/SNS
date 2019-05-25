@@ -12,6 +12,7 @@ import com.example.sns.CustomAdapter;
 import com.example.sns.Dictionary;
 import com.example.sns.PostActivity;
 import com.example.sns.PostViewActivity;
+import com.example.sns.R;
 
 import java.util.ArrayList;
 

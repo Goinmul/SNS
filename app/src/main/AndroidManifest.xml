@@ -10,6 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:networkSecurityConfig="@xml/network_security_config">
+
+        <activity android:name=".subjects.Algorithm_Analysis"
+            ></activity>
+        <activity android:name=".subjects.C_Programming"
+            ></activity>
+        <activity android:name=".subjects.CapStone"
+            ></activity>
+        <activity android:name=".subjects.Compiler_Theory"
+            ></activity>
+        <activity android:name=".subjects.Computer_Graphics"
+            ></activity>
+        <activity android:name=".subjects.Computer_Security"
+            ></activity>
+        <activity android:name=".subjects.Computer_Vision"
+            ></activity>
+        <activity android:name=".subjects.Data_Structure"
+            ></activity>
+        <activity android:name=".subjects.Database_Systems"
+            ></activity>
+        <activity android:name=".subjects.Embedded_Processor_Application"
+            ></activity>
+        <activity android:name=".subjects.Operating_System"
+            ></activity>
+
+
         <activity android:name=".PostListActivity"
             ></activity>
 

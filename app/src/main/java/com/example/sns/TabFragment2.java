@@ -44,7 +44,7 @@ public class TabFragment2 extends Fragment {
         getdata.resultSubject(subject);
         for (int i = 0; i < subject.size(); i++) {
             if (subject.get(i).getGrade().equalsIgnoreCase("2")) {
-                mSubject.add("(frag1)Subject " + subject.get(i).getSubject_name().toString());
+                mSubject.add(subject.get(i).getSubject_name().toString());
             }
         }
     }

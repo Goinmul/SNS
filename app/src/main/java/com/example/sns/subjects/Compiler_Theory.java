@@ -1,4 +1,4 @@
-package com.example.sns.SubjectList;
+package com.example.sns.subjects;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,10 +12,11 @@ import com.example.sns.CustomAdapter;
 import com.example.sns.Dictionary;
 import com.example.sns.PostActivity;
 import com.example.sns.PostViewActivity;
+import com.example.sns.R;
 
 import java.util.ArrayList;
 
-public class CapStone extends AppCompatActivity {
+public class Compiler_Theory extends AppCompatActivity {
 
     private ArrayList<Dictionary> mArrayList;
     private CustomAdapter mAdapter;
@@ -50,7 +51,7 @@ public class CapStone extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent;
                 //Intent intent ;
-               intent = new Intent(CapStone.this, PostActivity.class) ;
+               intent = new Intent(Compiler_Theory.this, PostActivity.class) ;
                 startActivity(intent) ;
 
                 // Dictionary 생성자를 사용하여 ArrayList에 삽입할 데이터를 만듭니다.
