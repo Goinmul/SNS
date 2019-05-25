@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class PostViewActivity extends AppCompatActivity {
-    private ArrayList<Comment> mArrayList;
+    private ArrayList<CommentActivity> mArrayList;
     private CustomAdapter2 mAdapter;
     private RecyclerView mRecyclerView;
 
@@ -57,7 +57,7 @@ public class PostViewActivity extends AppCompatActivity {
                 String strName = editTextName.getText().toString();
                 String strContents = editTextContents.getText().toString() ;
 
-                Comment com = new Comment(strName, strContents) ;
+                CommentActivity com = new CommentActivity(strName, strContents) ;
 
                 mArrayList.add(com) ;
                 mAdapter.notifyDataSetChanged();

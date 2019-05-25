@@ -13,11 +13,9 @@ import java.util.ArrayList;
 public class PostListActivity extends AppCompatActivity {
 
     private ArrayList<Dictionary> mArrayList;
-    private ArrayList<Comment> mArrayList2;
     private CustomAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
-    private int count = 1;
     PostViewActivity m = new PostViewActivity() ;
 
     @Override
