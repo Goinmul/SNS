@@ -14,7 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sns.Comment.Comment;
+import com.example.sns.DB.GetData;
+import com.example.sns.Model.Post;
 import com.example.sns.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -22,26 +26,41 @@ public class PostViewActivity extends AppCompatActivity {
     private ArrayList<Comment> mArrayList;
     private CustomAdapter2 mAdapter;
     private RecyclerView mRecyclerView;
-
+    static String postuserID  ;
+    static String viewuserID = "samuel1226";
+    static String posttitle ;
+    GetData getdata = new GetData();
+    ArrayList<Post> post = new ArrayList<Post>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.postview);
 
-        Intent intent = getIntent() ;
+        Intent getintent = getIntent() ;
+        postuserID = getintent.getExtras().getString("id") ;
+        posttitle = getintent.getExtras().getString("title") ;
+        String subject = getintent.getExtras().getString("subject") ;
+        String postcontent = null;
+
         TextView writer = (TextView) findViewById(R.id.editText7) ;
-        String viewWriter= intent.getStringExtra("contact_writer") ;
-        if(viewWriter!=null) writer.setText(viewWriter) ;
+         writer.setText(postuserID) ;
 
         TextView title = (TextView) findViewById(R.id.editText6) ;
-        String viewTitle = intent.getStringExtra("contact_title") ;
-        if(viewTitle!=null) title.setText(viewTitle) ;
+        title.setText(posttitle) ;
+        getdata.resultPost(post);
+        for(int i = 0 ; i<post.size(); i++) {
+            if(post.get(i).getSubject_name().equalsIgnoreCase(subject)&&
+                    post.get(i).getUser_id().equalsIgnoreCase(postuserID)&&
+            post.get(i).getTitle().equalsIgnoreCase(posttitle)) {
+                postcontent = post.get(i).getContent() ;
+            }
+        }
 
         TextView content = (TextView) findViewById(R.id.post_contents_text) ;
-        String viewContent = intent.getStringExtra("contact_content") ;
-        if(viewContent!=null) content.setText(viewContent);
+        content.setText(postcontent);
 
-        final EditText editTextName = (EditText) findViewById(R.id.editText5) ;
+        final TextView TextName = (TextView) findViewById(R.id.editText5) ;
+        TextName.setText(viewuserID) ;
         final EditText editTextContents = (EditText) findViewById(R.id.editText4) ;
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_main_list);
@@ -57,7 +76,7 @@ public class PostViewActivity extends AppCompatActivity {
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String strName = editTextName.getText().toString();
+                String strName = TextName.getText().toString();
                 String strContents = editTextContents.getText().toString() ;
 
                 Comment com = new Comment(strName, strContents) ;

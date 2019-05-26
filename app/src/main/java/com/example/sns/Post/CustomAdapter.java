@@ -78,9 +78,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
 
 
-        viewholder.id.setText(mList.get(position).getId());
-        viewholder.english.setText(mList.get(position).getEnglish());
-        viewholder.korean.setText(mList.get(position).getKorean());
+        viewholder.id.setText(mList.get(position).gettitle());
+        viewholder.english.setText(mList.get(position).getid());
+        viewholder.korean.setText(mList.get(position).getstarpoint());
        viewholder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -2,36 +2,36 @@ package com.example.sns.Post;
 
 public class Dictionary {
 
+    private String title;
     private String id;
-    private String English;
-    private String Korean;
+    private String starpoint;
 
-    public String getId() {
+    public String gettitle() {
+        return title;
+    }
+
+    public void settitle(String title) {
+        this.title = title;
+    }
+
+    public String getid() {
         return id;
+    }//english -> id
+
+    public void setid(String id) {
+        id = id;
     }
 
-    public void setId(String id) {
+    public String getstarpoint() {
+        return starpoint;
+    }
+
+    public void setstarpoint(String starpoint) {
+        starpoint = starpoint;
+    }
+    public Dictionary(String title , String id, String starpoint) {
+        this.title = title;
         this.id = id;
-    }
-
-    public String getEnglish() {
-        return English;
-    }
-
-    public void setEnglish(String english) {
-        English = english;
-    }
-
-    public String getKorean() {
-        return Korean;
-    }
-
-    public void setKorean(String korean) {
-        Korean = korean;
-    }
-    public Dictionary(String id, String english, String korean) {
-        this.id = id;
-        English = english;
-        Korean = korean;
+        this.starpoint = starpoint;
     }
 }
