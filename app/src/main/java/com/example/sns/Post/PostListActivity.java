@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.sns.Comment.Comment;
 import com.example.sns.DB.GetData;
 import com.example.sns.Model.Post;
 import com.example.sns.R;
@@ -34,7 +33,7 @@ public class PostListActivity extends AppCompatActivity {
         setContentView(R.layout.postlist);
 
         Intent getintent = getIntent() ;
-        final String subject = getIntent().getExtras().getString("clicked_subject_name") ;
+        final String subject = getintent.getExtras().getString("clicked_subject_name") ;
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_main_list);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
@@ -92,6 +91,8 @@ public class PostListActivity extends AppCompatActivity {
                  startActivity(postintent) ;
 
             }
+
+
         });
 
     }

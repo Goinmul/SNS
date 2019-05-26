@@ -1,15 +1,23 @@
 package com.example.sns.Post;
 
 
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
+import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.sns.Comment.CommentList;
 import com.example.sns.R;
 
 import java.util.ArrayList;
@@ -19,14 +27,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     private ArrayList<Dictionary> mList;
     private ItemClick itemClick ;
+    private Context mContext ;
     public interface ItemClick{
        public void onClick(View view, int position) ;
    }
-   public void setItemClick(ItemClick itemClick){
+    public void setItemClick(ItemClick itemClick){
         this.itemClick = itemClick ;
     }
 
-    public class CustomViewHolder extends RecyclerView.ViewHolder {
+    public class CustomViewHolder extends RecyclerView.ViewHolder{
 
         protected TextView id;
         protected TextView english;
@@ -40,9 +49,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             this.english = (TextView) view.findViewById(R.id.textview_recyclerview_english);
             this.korean = (TextView) view.findViewById(R.id.textview_recyclerview_korean);
         }
-    }
 
-
+}
     public CustomAdapter(ArrayList<Dictionary> list) {
         this.mList = list;
     }

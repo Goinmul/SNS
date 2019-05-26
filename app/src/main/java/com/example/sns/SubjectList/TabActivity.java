@@ -24,7 +24,7 @@ public class TabActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
-
+    static String userID ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,8 +32,7 @@ public class TabActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tab);
 
         Intent intent = getIntent();
-
-
+        userID = intent.getExtras().getString("userID") ;
         GetData getdata = new GetData();
         SetData setdata = new SetData();
 

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class PostWriteActivity extends AppCompatActivity {
     static String userID = "hn1226 " ;
-
+    static int edit ;
     SetData setData = new SetData();
     GetData getData = new GetData() ;
     ArrayList<Subject> subjects = new ArrayList<Subject>();
@@ -25,32 +25,47 @@ public class PostWriteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post);
 
-        Intent intent = getIntent() ;
+        final Intent intent = getIntent() ;
+        final Intent editIntent = getIntent() ;
         final String subject = intent.getExtras().getString("subject") ;
-        final int[] index = new int[1];
-
+        final EditText editText = (EditText)findViewById(R.id.editText) ;
+        final EditText editText2 = (EditText)findViewById(R.id.editText2) ;
+        String editUserID ;
+        String editTitle ;
+        String editContent ;
         Button button = (Button) findViewById(R.id.button) ;
+        edit = 0 ;
+        edit = editIntent.getExtras().getInt("editPostID") ;
+        if(edit!=0){
+            int editPostID = editIntent.getExtras().getInt("editPostID") ;
+            editUserID = editIntent.getExtras().getString("editUserID") ;
+            editTitle = editIntent.getExtras().getString("editTitle") ;
+            editContent = editIntent.getExtras().getString("editContent") ;
+            editText.setText(editTitle) ;
+            editText2.setText(editContent);
+        }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //Intent intent = new Intent(PostWriteActivity.this, PostViewActivity.class) ;
-                EditText editText1 = (EditText)findViewById(R.id.editText3) ;
-                //intent.putExtra("contact_writer", editText1.getText().toString()) ;
-
-                EditText editText = (EditText)findViewById(R.id.editText) ;
-                //intent.putExtra("contact_title", editText.getText().toString()) ;
-
-                EditText editText2 = (EditText)findViewById(R.id.editText2) ;
-                //intent.putExtra("contact_content", editText2.getText().toString());
-
-                getData.resultSubject(subjects);
-                for(int i = 0 ; i<subjects.size();i++){
-                    if(subjects.get(i).getSubject_name().equals(subject)){
-                        setData.writePost(subject, userID ,editText.getText().toString(), editText2.getText().toString()) ;
+                Intent intent = new Intent(PostWriteActivity.this, PostViewActivity.class) ;
+                intent.putExtra("title", editText.getText().toString()) ;
+                intent.putExtra("id",userID) ;
+                intent.putExtra("subject", subject) ;
+                if(edit!=0){
+                    setData.editPost(subject, editText.getText().toString(),editText2.getText().toString(),edit);
+                }
+                else{
+                    if(editText.getText().toString()!=null && editText2.getText().toString()!=null){
+                        getData.resultSubject(subjects);
+                        for(int i = 0 ; i<subjects.size();i++){
+                            if(subjects.get(i).getSubject_name().equals(subject)){
+                                setData.writePost(subject, userID ,editText.getText().toString(), editText2.getText().toString()) ;
+                            }
+                        }
                     }
                 }
-                //startActivity(intent);
+                startActivity(intent);
             }
         });
     }

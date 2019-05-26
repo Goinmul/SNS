@@ -11,13 +11,13 @@ import com.example.sns.R;
 import com.example.sns.SubjectList.TabActivity;
 
 public class MainActivity extends AppCompatActivity {
-
+    EditText idText ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText idText = (EditText) findViewById(R.id.idText);
+        idText = (EditText) findViewById(R.id.idText);
         EditText passwordText = (EditText) findViewById(R.id.passwordText);
         Button loginButton = (Button) findViewById(R.id.loginButton);
         TextView registerButton = (TextView) findViewById(R.id.registerButton);
@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     public void logIn_click(View view) {
 
         Intent login_intent = new Intent(this, TabActivity.class);
+        login_intent.putExtra("userID", idText.getText().toString());
         MainActivity.this.startActivity(login_intent);
+
     }
 }
