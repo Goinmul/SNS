@@ -54,8 +54,10 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
                     // real data
                     String class_name = "com.example.sns.Post.PostListActivity"; // intents to move! Should have all the list.
+                    String clicked_subject_name = subjects.get(getAdapterPosition());
                     try {
                         Intent intent = new Intent(v.getContext(), Class.forName(class_name));
+                        intent.putExtra("clicked_subject_name", clicked_subject_name);
                         v.getContext().startActivity(intent);
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
